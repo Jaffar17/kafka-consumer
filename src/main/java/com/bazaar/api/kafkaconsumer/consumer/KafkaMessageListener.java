@@ -9,8 +9,23 @@ import org.springframework.stereotype.Service;
 public class KafkaMessageListener {
     Logger logger = LoggerFactory.getLogger(KafkaMessageListener.class);
 
-    @KafkaListener(topics = "learning-kafka", groupId = "group-1")
-    public void consume(Object message) {
-        logger.info("Consumer consumed the message {} ",message.toString());
+    @KafkaListener(topics = "learning-kafka", groupId = "group-2")
+    public void consume1(Object message) {
+        logger.info("Consumer1 consumed the message {} ",message.toString());
+    }
+
+    @KafkaListener(topics = "learning-kafka", groupId = "group-2")
+    public void consume2(Object message) {
+        logger.info("Consumer2 consumed the message {} ",message.toString());
+    }
+
+    @KafkaListener(topics = "learning-kafka", groupId = "group-2")
+    public void consume3(Object message) {
+        logger.info("Consumer3 consumed the message {} ",message.toString());
+    }
+
+    @KafkaListener(topics = "learning-kafka", groupId = "group-2")
+    public void consume4(Object message) {
+        logger.info("Consumer4 consumed the message {} ",message.toString());
     }
 }
